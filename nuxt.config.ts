@@ -2,7 +2,7 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ["~/assets/css/main.css"],
   vite: {
     plugins: [
@@ -10,6 +10,15 @@ export default defineNuxtConfig({
     ],
   },
   experimental: { appManifest: false },
-  modules: ["@nuxt/icon", "@nuxt/image"],
+  modules: ["./modules/practice-content"],
+  // The existing project intentionally uses root-level pages/layouts.
+  srcDir: ".",
+  ssr: true,
+  nitro: { preset: 'netlify-static' },
+  routeRules: {
+    '/**': { headers: { 'X-Robots-Tag': 'noindex, nofollow, noarchive' } },
+    '/home': { redirect: { to: '/', statusCode: 301 } },
+    '/home/': { redirect: { to: '/', statusCode: 301 } },
+  },
   compatibilityDate: "2024-12-18",
 });
