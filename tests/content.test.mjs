@@ -4,6 +4,27 @@ import { cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:f
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { loadContent } from '../scripts/content.mjs'
+import { homeSections } from '../scripts/homepage.mjs'
+
+test('homepage rendering preserves the complete copy, local images and inactive controls', () => {
+  const home = loadContent().documents.find(doc => doc.path === '/')
+  const sections = homeSections(home.html)
+  const text = html => html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
+  assert.equal(text(sections.introduction + ' ' + sections.body), text(home.html))
+  assert.match(sections.image, /loading="eager"/)
+  assert.equal((sections.body.match(/class="home-awards"/g) || []).length, 1)
+  const images = [...home.html.matchAll(/<img[^>]*src="([^"]+)"/g)].map(match => match[1])
+  assert.equal(images.length, 9)
+  for (const image of images) {
+    assert.ok(image.startsWith('/images/home/'))
+    assert.ok(readFileSync(join('public', image)).length > 0)
+  }
+  assert.doesNotMatch(home.html, /<form|<input|<iframe|<script/i)
+  assert.match(home.html, /href="https:\/\/leslietourish.com\/services\/"/)
+  assert.match(home.html, /<p>Contact Me to Schedule a Free 15-Minute Therapy Consult<\/p>/)
+  const changedOpening = '<h2>Edited introduction</h2><p>Retained content.</p>'
+  assert.equal(homeSections(changedOpening).body, changedOpening)
+})
 
 test('all approved content and archive URLs are explicitly available for static generation', () => {
   const { documents, posts, archives, routes } = loadContent()
@@ -15,7 +36,8 @@ test('all approved content and archive URLs are explicitly available for static 
   assert.ok(!routes.includes('/what-to-expect/'))
   assert.ok(!routes.includes('/psychotherapy-services/'))
   assert.ok(!routes.includes('/not-a-real-page/'))
-  assert.ok(documents.every(doc => doc.placeholder === true))
+  assert.ok(documents.filter(doc => doc.path !== '/').every(doc => doc.placeholder === true))
+  assert.equal(documents.find(doc => doc.path === '/').placeholder, false)
   // Distinct articles must survive the source's duplicated title.
   assert.equal(posts.filter(post => post.title === 'The Myth of the “Perfect Therapist”').length, 2)
 })
