@@ -5,3 +5,16 @@
   command = "npm run generate" # how to build your project
   functions = "netlify/functions" # where Netlify Functions live
   publish = "dist" # where the built project lives
+
+# Review foundation only. Remove noindex only as part of an approved launch.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/home/"
+  to = "/"
+  status = 301

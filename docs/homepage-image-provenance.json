@@ -1,0 +1,236 @@
+{
+  "images": [
+    {
+      "scope": "homepage",
+      "role": "inline image",
+      "source_url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2026/07/leslie-tourish-therapy-office-dripping-springs2.jpg?w=1024",
+      "source_id": "3167",
+      "source_alt": "",
+      "mapping_id": "IMG-01",
+      "candidate_reference": "https://leslietourishcom.wordpress.com/wp-content/uploads/2026/07/leslie-tourish-therapy-office-dripping-springs2.jpg?w=1024",
+      "downloaded_file": "public/images/home/leslie-tourish-therapy-office-dripping-springs2.jpg",
+      "target_local_asset": "/images/home/leslie-tourish-therapy-office-dripping-springs2.jpg",
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2026/07/leslie-tourish-therapy-office-dripping-springs2.jpg",
+      "sha256": "0990751c1799261e18ebfd07521b62dc48df4e944d5890328d3dce8818c76820",
+      "bytes": 165104,
+      "status": "downloaded"
+    },
+    {
+      "scope": "homepage",
+      "role": "inline image",
+      "source_url": "https://leslietourish.com/wp-content/uploads/2024/03/leslie-tourish-voted-best-therapist-dripping-springs-texas.jpg",
+      "source_id": "1138",
+      "source_alt": "",
+      "mapping_id": "IMG-02",
+      "candidate_reference": "https://leslietourish.com/wp-content/uploads/2024/03/leslie-tourish-voted-best-therapist-dripping-springs-texas.jpg",
+      "downloaded_file": "public/images/home/leslie-tourish-voted-best-therapist-dripping-springs-texas.jpg",
+      "target_local_asset": "/images/home/leslie-tourish-voted-best-therapist-dripping-springs-texas.jpg",
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2024/03/leslie-tourish-voted-best-therapist-dripping-springs-texas.jpg",
+      "sha256": "27fb658b559d842ce306e2b3f11481e49b7be42803fdf1ac2c328bd2b825af2c",
+      "bytes": 1381900,
+      "status": "downloaded"
+    },
+    {
+      "scope": "homepage",
+      "role": "inline image",
+      "source_url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/07/gold_flowers_represent_mental_health_healing_your_possible_glow_beauty_sense_of_self.png?w=400",
+      "source_id": "2400",
+      "source_alt": "",
+      "mapping_id": "IMG-03",
+      "candidate_reference": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/07/gold_flowers_represent_mental_health_healing_your_possible_glow_beauty_sense_of_self.png?w=400",
+      "downloaded_file": "public/images/home/gold_flowers_represent_mental_health_healing_your_possible_glow_beauty_sense_of_self.png",
+      "target_local_asset": "/images/home/gold_flowers_represent_mental_health_healing_your_possible_glow_beauty_sense_of_self.png",
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2025/07/gold_flowers_represent_mental_health_healing_your_possible_glow_beauty_sense_of_self.png",
+      "sha256": "9d0ecd64c1a2d95163972ebd1d89681af178462e4958c9637dd767b86d6275b2",
+      "bytes": 47124,
+      "status": "downloaded"
+    },
+    {
+      "scope": "homepage",
+      "role": "cover background",
+      "source_url": "https://dotcompatterns.files.wordpress.com/2023/10/pexels-karolina-grabowska-6825572-opt.jpg",
+      "source_id": "12622",
+      "source_alt": "",
+      "mapping_id": "IMG-04",
+      "candidate_reference": "https://dotcompatterns.files.wordpress.com/2023/10/pexels-karolina-grabowska-6825572-opt.jpg",
+      "downloaded_file": null,
+      "target_local_asset": null,
+      "export_attachment_url": null,
+      "status": "deferred: existing design/footer/subscription unchanged"
+    },
+    {
+      "scope": "homepage",
+      "role": "inline image",
+      "source_url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/07/best_of_dripping_springs_2025.png?w=572",
+      "source_id": "2405",
+      "source_alt": "",
+      "mapping_id": "IMG-05",
+      "candidate_reference": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/07/best_of_dripping_springs_2025.png?w=572",
+      "downloaded_file": "public/images/home/best_of_dripping_springs_2025.png",
+      "target_local_asset": "/images/home/best_of_dripping_springs_2025.png",
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2025/07/best_of_dripping_springs_2025.png",
+      "sha256": "1bae338055514591ff5d0ee900424e1815f786a9426ed6c41f0e3b9b5f8214e3",
+      "bytes": 78245,
+      "status": "downloaded"
+    },
+    {
+      "scope": "homepage",
+      "role": "inline image",
+      "source_url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/07/best_of_dripping_springs_2024-1.png?w=572",
+      "source_id": "2404",
+      "source_alt": "",
+      "mapping_id": "IMG-06",
+      "candidate_reference": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/07/best_of_dripping_springs_2024-1.png?w=572",
+      "downloaded_file": "public/images/home/best_of_dripping_springs_2024-1.png",
+      "target_local_asset": "/images/home/best_of_dripping_springs_2024-1.png",
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2025/07/best_of_dripping_springs_2024-1.png",
+      "sha256": "85f3d67dc3625e501388177bbca9c0252e42cf466a985ab9b76489e6cf4d3417",
+      "bytes": 58207,
+      "status": "downloaded"
+    },
+    {
+      "scope": "homepage",
+      "role": "inline image",
+      "source_url": "https://leslietourish.com/wp-content/uploads/2023/12/best_of_dripping_springs_psychotherapist_leslie_tourish_2023.png?w=600",
+      "source_id": "247",
+      "source_alt": "",
+      "mapping_id": "IMG-07",
+      "candidate_reference": "https://leslietourish.com/wp-content/uploads/2023/12/best_of_dripping_springs_psychotherapist_leslie_tourish_2023.png?w=600",
+      "downloaded_file": "public/images/home/best_of_dripping_springs_psychotherapist_leslie_tourish_2023.png",
+      "target_local_asset": "/images/home/best_of_dripping_springs_psychotherapist_leslie_tourish_2023.png",
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2023/12/best_of_dripping_springs_psychotherapist_leslie_tourish_2023.png",
+      "sha256": "8f6e0a6e8889ae3be6e81b319e5edac11f46c7f082006820422b6bf7120a70f8",
+      "bytes": 45167,
+      "status": "downloaded"
+    },
+    {
+      "scope": "homepage",
+      "role": "inline image",
+      "source_url": "https://leslietourish.com/wp-content/uploads/2023/12/best_of_dripping_springs_psychotherapist_leslie_tourish_2022.jpg?w=600",
+      "source_id": "248",
+      "source_alt": "",
+      "mapping_id": "IMG-08",
+      "candidate_reference": "https://leslietourish.com/wp-content/uploads/2023/12/best_of_dripping_springs_psychotherapist_leslie_tourish_2022.jpg?w=600",
+      "downloaded_file": "public/images/home/best_of_dripping_springs_psychotherapist_leslie_tourish_2022.jpg",
+      "target_local_asset": "/images/home/best_of_dripping_springs_psychotherapist_leslie_tourish_2022.jpg",
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2023/12/best_of_dripping_springs_psychotherapist_leslie_tourish_2022.jpg",
+      "sha256": "7cc2a2fc9e939ef0753784705cec9ce0c8dc0f014dee47a8a2ad5d1e13c3f036",
+      "bytes": 94542,
+      "status": "downloaded"
+    },
+    {
+      "scope": "homepage",
+      "role": "inline image",
+      "source_url": "https://leslietourish.com/wp-content/uploads/2023/11/best_of_dripping_springs_psychotherapist_leslie_tourish_2021.jpg?w=600",
+      "source_id": "96",
+      "source_alt": "",
+      "mapping_id": "IMG-09",
+      "candidate_reference": "https://leslietourish.com/wp-content/uploads/2023/11/best_of_dripping_springs_psychotherapist_leslie_tourish_2021.jpg?w=600",
+      "downloaded_file": "public/images/home/best_of_dripping_springs_psychotherapist_leslie_tourish_2021.jpg",
+      "target_local_asset": "/images/home/best_of_dripping_springs_psychotherapist_leslie_tourish_2021.jpg",
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2023/11/best_of_dripping_springs_psychotherapist_leslie_tourish_2021.jpg",
+      "sha256": "350f7f6c53a4993d4cdf242da1de4e65e0f0094e72af5d1b9bc312d34d0c244d",
+      "bytes": 90717,
+      "status": "downloaded"
+    },
+    {
+      "scope": "homepage",
+      "role": "inline image",
+      "source_url": "https://leslietourish.com/wp-content/uploads/2023/11/best_of_dripping_springs_psychotherapist_leslie_tourish_2020.jpg?w=600",
+      "source_id": "98",
+      "source_alt": "",
+      "mapping_id": "IMG-10",
+      "candidate_reference": "https://leslietourish.com/wp-content/uploads/2023/11/best_of_dripping_springs_psychotherapist_leslie_tourish_2020.jpg?w=600",
+      "downloaded_file": "public/images/home/best_of_dripping_springs_psychotherapist_leslie_tourish_2020.jpg",
+      "target_local_asset": "/images/home/best_of_dripping_springs_psychotherapist_leslie_tourish_2020.jpg",
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2023/11/best_of_dripping_springs_psychotherapist_leslie_tourish_2020.jpg",
+      "sha256": "83a510d158aa20092d39bc025efe7982452686b694ff969477ab1d9d91ee5872",
+      "bytes": 114995,
+      "status": "downloaded"
+    },
+    {
+      "scope": "homepage",
+      "role": "decorative group background",
+      "source_url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/07/there-are-many-flowers-that-are-field-with-yellow-background-generative-ai.jpg",
+      "source_id": "2399",
+      "source_alt": null,
+      "mapping_id": "IMG-11",
+      "candidate_reference": "Mapping only; preserve existing design, do not insert as inline content",
+      "downloaded_file": null,
+      "target_local_asset": null,
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2025/07/there-are-many-flowers-that-are-field-with-yellow-background-generative-ai.jpg",
+      "status": "deferred: existing design/footer/subscription unchanged"
+    },
+    {
+      "scope": "shared footer 147",
+      "role": "inline image",
+      "source_url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/lt-logo-teal-transparent.png?w=1024",
+      "source_id": "2409",
+      "source_alt": "",
+      "mapping_id": "IMG-12",
+      "candidate_reference": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/lt-logo-teal-transparent.png?w=1024",
+      "downloaded_file": null,
+      "target_local_asset": null,
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2023/11/lt-logo-teal-transparent.png",
+      "status": "deferred: existing design/footer/subscription unchanged"
+    },
+    {
+      "scope": "shared footer 147",
+      "role": "decorative group background",
+      "source_url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/healing-glow-peaceful-nature-minimal-background.jpg",
+      "source_id": "2407",
+      "source_alt": null,
+      "mapping_id": "IMG-13",
+      "candidate_reference": "Mapping only; preserve existing design, do not insert as inline content",
+      "downloaded_file": null,
+      "target_local_asset": null,
+      "export_attachment_url": "https://leslietourish.com/wp-content/uploads/2023/11/healing-glow-peaceful-nature-minimal-background.jpg",
+      "status": "deferred: existing design/footer/subscription unchanged"
+    }
+  ],
+  "dynamic_references": [
+    {
+      "scope": "homepage",
+      "block": "jetpack/subscriptions",
+      "attributes": {
+        "borderRadius": 5
+      },
+      "source_comment": "<!-- wp:jetpack/subscriptions {\"borderRadius\":5} / -->"
+    },
+    {
+      "scope": "homepage",
+      "block": "block",
+      "attributes": {
+        "ref": 147
+      },
+      "source_comment": "<!-- wp:block {\"ref\":147} / -->"
+    },
+    {
+      "scope": "shared footer 147",
+      "block": "social-link",
+      "attributes": {
+        "url": "https://www.facebook.com/profile.php?id=100071941175760",
+        "service": "facebook"
+      },
+      "source_comment": "<!-- wp:social-link {\"url\":\"https://www.facebook.com/profile.php?id=100071941175760\",\"service\":\"facebook\"} / -->"
+    },
+    {
+      "scope": "shared footer 147",
+      "block": "social-link",
+      "attributes": {
+        "url": "https://www.instagram.com/leslie.tourish/",
+        "service": "instagram"
+      },
+      "source_comment": "<!-- wp:social-link {\"url\":\"https://www.instagram.com/leslie.tourish/\",\"service\":\"instagram\"} / -->"
+    }
+  ],
+  "homepage_links": [
+    "https://leslietourish.com/services/"
+  ],
+  "footer_links": [
+    "mailto:leslie@leslietourish.com",
+    "https://leslietourish.com/privacy-policy/",
+    "https://leslietourish.com/texas-therapist-mental-health-records/"
+  ],
+  "download_status": "See per-image status. Downloaded only nine mapped homepage inline images; decorative backgrounds, subscription cover and shared footer excluded."
+}

@@ -1,22 +1,7 @@
 <script setup>
-useHead({
-  htmlAttrs: { lang: "en-US" },
-  title: "Nuxt Starter",
-  meta: [
-    {
-      name: "description",
-      content:
-        "Nuxt Starter is a minimal template created for quick landing pages, built with Nuxt and Tailwind CSS.",
-    },
-  ],
-  bodyAttrs: {
-    class: 'font-display'
-  }
-});
+useHead({ htmlAttrs: { lang: 'en' } })
 </script>
-
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <NuxtRouteAnnouncer />
+  <NuxtLayout><NuxtPage /></NuxtLayout>
 </template>
