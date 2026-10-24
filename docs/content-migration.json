@@ -1,0 +1,513 @@
+{
+  "source_sha256": "fa0bfecae37d333e207c8ab75288074c3a68d4a91c3384107779f7779579dcc7",
+  "records": [
+    {
+      "sourceId": 1,
+      "path": "/about/",
+      "file": "content/pages/about.md",
+      "words": 680,
+      "expanded_blocks": [
+        "147"
+      ]
+    },
+    {
+      "sourceId": 84,
+      "path": "/",
+      "file": "content/pages/home.md",
+      "words": 325,
+      "expanded_blocks": [
+        "147"
+      ]
+    },
+    {
+      "sourceId": 1198,
+      "path": "/mental-health-resources/frequently-asked-therapy-questions/",
+      "file": "content/pages/mental-health-resources--frequently-asked-therapy-questions.md",
+      "words": 573,
+      "expanded_blocks": [
+        "147"
+      ]
+    },
+    {
+      "sourceId": 1253,
+      "path": "/mental-health-resources/",
+      "file": "content/pages/mental-health-resources.md",
+      "words": 194,
+      "expanded_blocks": [
+        "147"
+      ]
+    },
+    {
+      "sourceId": 47,
+      "path": "/services/",
+      "file": "content/pages/services.md",
+      "words": 451,
+      "expanded_blocks": [
+        "147"
+      ]
+    },
+    {
+      "sourceId": 649,
+      "path": "/2024/02/06/as-you-think-so-you-become/",
+      "file": "content/posts/2024--02--06--as-you-think-so-you-become.md",
+      "words": 596,
+      "expanded_blocks": []
+    }
+  ],
+  "images": [
+    {
+      "sourceId": 1,
+      "role": "background",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/healing-glow-peaceful-nature-minimal-background.jpg",
+      "alt": null,
+      "owner": "user"
+    },
+    {
+      "sourceId": 1,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/12/leslie_tourish_dripping_springs_texas_psychotherapist_mandala_puzzle2.png",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/11/ds-outlook-headshot-leslie-tourish.jpg?w=831",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/11/leslie_tourish_psychotherapist_dripping_springs_texas_depression_treatment_therapy-2.png?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/11/leslie_tourish_psychotherapist_dripping_springs_texas_anxiety_treatment_therapy.png?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/11/leslie_tourish_psychotherapist_dripping_springs_texas_trauma_treatment_therapy.jpg?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/11/leslie_tourish_psychotherapist_dripping_springs_texas_helplessness_treatment_therapy.png?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/11/leslie_tourish_psychotherapist_dripping_springs_texas_hopelessness_treatment_therapy.jpg?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/11/leslie_tourish_psychotherapist_dripping_springs_texas_shame_treatment_therapy.png?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1,
+      "role": "inline",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/lt-logo-teal-transparent.png?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "background",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/07/there-are-many-flowers-that-are-field-with-yellow-background-generative-ai.jpg",
+      "alt": null,
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "background",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/healing-glow-peaceful-nature-minimal-background.jpg",
+      "alt": null,
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "inline",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2026/07/leslie-tourish-therapy-office-dripping-springs2.jpg?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/03/leslie-tourish-voted-best-therapist-dripping-springs-texas.jpg",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "inline",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/07/gold_flowers_represent_mental_health_healing_your_possible_glow_beauty_sense_of_self.png?w=400",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "inline",
+      "url": "https://dotcompatterns.files.wordpress.com/2023/10/pexels-karolina-grabowska-6825572-opt.jpg",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "inline",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/07/best_of_dripping_springs_2025.png?w=572",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "inline",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/07/best_of_dripping_springs_2024-1.png?w=572",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/12/best_of_dripping_springs_psychotherapist_leslie_tourish_2023.png?w=600",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/12/best_of_dripping_springs_psychotherapist_leslie_tourish_2022.jpg?w=600",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/11/best_of_dripping_springs_psychotherapist_leslie_tourish_2021.jpg?w=600",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/11/best_of_dripping_springs_psychotherapist_leslie_tourish_2020.jpg?w=600",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 84,
+      "role": "inline",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/lt-logo-teal-transparent.png?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1198,
+      "role": "background",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/healing-glow-peaceful-nature-minimal-background.jpg",
+      "alt": null,
+      "owner": "user"
+    },
+    {
+      "sourceId": 1198,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/04/healing-glow-peaceful-environment-for-getting-therapy-answers-leslie-tourish-lpc.jpg",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1198,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/11/my-partner-thinks-i-have-obsessive-compulsive-disorder-can-you-help-in-therapy_web.png?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1198,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/06/what-to-expect-first-therapy-session-with-leslie-tourish.png?w=1024",
+      "alt": "On a beautiful sunlit pond, Leslie Tourish responds to the question What can I expect from my first therapy session with you?  The answer is I'll meet you where you are and we'll join in a place of getting to know one another.  Text to the right expands on this answer.",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1198,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/06/final-fb-templates-faq-2.png?w=1024",
+      "alt": "On a beautiful sunlit pond with white flowers dangling over top and the mandala representing Leslie Tourish's brand in the lower right, Leslie responds to the question What does the word LPC mean in your title?  The answer is Licensed Professional Counselor, which means I've completed my master's-level in mental healthcare.  Text to the left expands on this answer.",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1198,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/06/final-fb-templates-faq-3-2.png?w=1024",
+      "alt": "On a beautiful sunlit pond yellow background with kalalilies and wheat, Leslie Tourish responds to the question Do you accept insurance?  The response to this is I do not accept insurance but can provide a super bill to clients for insurance submission.  Text to the right expands on this answer.",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1198,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/06/final-fb-templates-faq-4.png?w=1024",
+      "alt": "On a tan background with wildflowers in hues of gold, Leslie Tourish responds to the question How long will I be in therapy with you?  The response is That depends on how ready you are to disclose and explore the aspects of your life making you stuck.  Text to the left expands on this answer.",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1198,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/06/final-fb-templates-faq-6.png?w=1024",
+      "alt": "On a golden background with flowers sunlit, Leslie Tourish responds to the question I would like to leave you a review, but I don't want to disclose my name.  What do I do?  Leslie responds: Being a therapist, it's a happy moment when a client is able to confidently stand on their own two feet.  Send me a private email!.  Text to the right expands on this answer.",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1198,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/06/final-fb-templates-faq-5-3.png?w=1024",
+      "alt": "On a soft gold background with soft overlays of wild flowers, Leslie Tourish responds to the question What type of therapy do you practice for someone who suffers from trauma?.  Her response: \"We'll open up the worst part of the trauma and the negative belief system you associate with it.\"  Text to the left expands on this answer.",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1198,
+      "role": "inline",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/lt-logo-teal-transparent.png?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1253,
+      "role": "background",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/healing-glow-peaceful-nature-minimal-background.jpg",
+      "alt": null,
+      "owner": "user"
+    },
+    {
+      "sourceId": 1253,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/04/vibrant-field-flowers-illuminated-by-sun-represent-light-and-healing-psychotherapy-with-leslie-tourish.jpg",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1253,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/04/leslies-list-stop-walking-on-eggshells-book-for-mental-health.png",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 1253,
+      "role": "inline",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/lt-logo-teal-transparent.png?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 47,
+      "role": "background",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/healing-glow-peaceful-nature-minimal-background.jpg",
+      "alt": null,
+      "owner": "user"
+    },
+    {
+      "sourceId": 47,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/12/leslie_tourish_dripping_springs_texas_psychotherapist_mandala_puzzle2.png",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 47,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/11/dripping_springs_texas_psychotherapist_leslie_tourish_trauma_therapy.jpg?w=681",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 47,
+      "role": "inline",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/lt-logo-teal-transparent.png?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 649,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/02/beautiful-lotus-flower-showing-harmony-self-love-leslie-tourish-therapist.jpg?w=1024",
+      "alt": "",
+      "owner": "user"
+    }
+  ],
+  "dynamic_blocks": [
+    {
+      "sourceId": 84,
+      "block": "jetpack/subscriptions",
+      "source_comment": "jetpack/subscriptions {\"borderRadius\":5} /",
+      "handling": "inactive or existing page title"
+    },
+    {
+      "sourceId": 649,
+      "block": "post-title",
+      "source_comment": "post-title {\"textAlign\":\"center\",\"level\":1,\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|custom-color-5\"}}},\"spacing\":{\"padding\":{\"right\":\"4em\",\"left\":\"4em\"}}},\"textColor\":\"custom-color-5\"} /",
+      "handling": "inactive or existing page title"
+    }
+  ],
+  "link_changes": [
+    {
+      "sourceId": 1,
+      "from": "https://leslietourish.com/contact/",
+      "to": "/contact/"
+    },
+    {
+      "sourceId": 1,
+      "from": "https://leslietourish.com/contact/",
+      "to": "/contact/"
+    },
+    {
+      "sourceId": 1,
+      "from": "https://leslietourish.com/privacy-policy/",
+      "to": "/privacy-policy/"
+    },
+    {
+      "sourceId": 1,
+      "from": "https://leslietourish.com/texas-therapist-mental-health-records/",
+      "to": "/texas-therapist-mental-health-records/"
+    },
+    {
+      "sourceId": 84,
+      "from": "https://leslietourish.com/services/",
+      "to": "/services/"
+    },
+    {
+      "sourceId": 84,
+      "from": "https://leslietourish.com/privacy-policy/",
+      "to": "/privacy-policy/"
+    },
+    {
+      "sourceId": 84,
+      "from": "https://leslietourish.com/texas-therapist-mental-health-records/",
+      "to": "/texas-therapist-mental-health-records/"
+    },
+    {
+      "sourceId": 1198,
+      "from": "https://leslietourish.com/services/",
+      "to": "/services/"
+    },
+    {
+      "sourceId": 1198,
+      "from": "https://leslietourish.com/2024/04/30/as-a-trauma-survivor-what-can-i-expect-in-therapy-with-leslie-tourish/",
+      "to": "/2024/04/30/as-a-trauma-survivor-what-can-i-expect-in-therapy-with-leslie-tourish/"
+    },
+    {
+      "sourceId": 1198,
+      "from": "https://leslietourish.com/privacy-policy/",
+      "to": "/privacy-policy/"
+    },
+    {
+      "sourceId": 1198,
+      "from": "https://leslietourish.com/texas-therapist-mental-health-records/",
+      "to": "/texas-therapist-mental-health-records/"
+    },
+    {
+      "sourceId": 1253,
+      "from": "https://leslietourish.com/2024/05/06/read-stop-walking-on-eggshells-if-you-have-someone-difficult-in-your-life/",
+      "to": "/2024/05/06/read-stop-walking-on-eggshells-if-you-have-someone-difficult-in-your-life/"
+    },
+    {
+      "sourceId": 1253,
+      "from": "https://leslietourish.com/privacy-policy/",
+      "to": "/privacy-policy/"
+    },
+    {
+      "sourceId": 1253,
+      "from": "https://leslietourish.com/texas-therapist-mental-health-records/",
+      "to": "/texas-therapist-mental-health-records/"
+    },
+    {
+      "sourceId": 47,
+      "from": "https://leslietourish.com/contact/",
+      "to": "/contact/"
+    },
+    {
+      "sourceId": 47,
+      "from": "https://leslietourishcom.wordpress.com/about/",
+      "to": "/about/"
+    },
+    {
+      "sourceId": 47,
+      "from": "https://leslietourish.com/privacy-policy/",
+      "to": "/privacy-policy/"
+    },
+    {
+      "sourceId": 47,
+      "from": "https://leslietourish.com/texas-therapist-mental-health-records/",
+      "to": "/texas-therapist-mental-health-records/"
+    },
+    {
+      "sourceId": 649,
+      "from": "https://leslietourish.com/contact/",
+      "to": "/contact/"
+    }
+  ],
+  "unresolved_links": [],
+  "source_url_map": [
+    {
+      "sourceId": 1,
+      "old_url": "https://leslietourish.com/about/",
+      "target": "/about/",
+      "action": "preserve"
+    },
+    {
+      "sourceId": 84,
+      "old_url": "https://leslietourish.com/",
+      "target": "/",
+      "action": "preserve"
+    },
+    {
+      "sourceId": 1198,
+      "old_url": "https://leslietourish.com/mental-health-resources/frequently-asked-therapy-questions/",
+      "target": "/mental-health-resources/frequently-asked-therapy-questions/",
+      "action": "preserve"
+    },
+    {
+      "sourceId": 1253,
+      "old_url": "https://leslietourish.com/mental-health-resources/",
+      "target": "/mental-health-resources/",
+      "action": "preserve"
+    },
+    {
+      "sourceId": 47,
+      "old_url": "https://leslietourish.com/services/",
+      "target": "/services/",
+      "action": "preserve"
+    },
+    {
+      "sourceId": 649,
+      "old_url": "https://leslietourish.com/2024/02/06/as-you-think-so-you-become/",
+      "target": "/2024/02/06/as-you-think-so-you-become/",
+      "action": "preserve"
+    }
+  ],
+  "editorial": [],
+  "excluded_types": [
+    "attachment",
+    "feedback",
+    "nav_menu_item",
+    "wp_global_styles",
+    "wp_navigation",
+    "wp_template",
+    "wp_template_part"
+  ]
+}

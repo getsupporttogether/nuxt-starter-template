@@ -14,7 +14,12 @@ const markdown = new Marked({
       return safeUrl(href) ? `<a href="${escape(href)}">${text}</a>` : text
     },
     image({ href, text }) {
-      return safeUrl(href) && /^(https?:\/\/|\/(?!\/))/i.test(href)
+      if (/^https?:\/\//i.test(href || '')) {
+        // Preserve source references in Markdown; photographs are supplied by the owner.
+        // Do not hotlink WordPress assets while the replacement photographs are pending.
+        return `<span class="article-image-note" data-photo-pending="true" role="img" aria-label="${escape(text || 'Photograph to be supplied')}"><span aria-hidden="true">Photograph to be supplied</span></span>`
+      }
+      return /^\/(?!\/)/.test(href || '')
         ? `<img src="${escape(href)}" alt="${escape(text)}" loading="lazy" decoding="async">` : escape(text)
     },
   },

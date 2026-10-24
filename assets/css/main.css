@@ -131,6 +131,7 @@ em { font-weight: 400; }
 .article-heading .gold-rule { margin-block: 35px 45px; }
 .article-body { margin-left: 9%; }
 .article-image-note { padding: 30px; background: #ece6db; font-size: .88rem; border: 1px dashed #b8aa9b; }
+.article-image-note[data-photo-pending] { display: block; }
 .article-back { margin-top: 38px; }
 .archive-body { padding-bottom: 90px; }
 .post-list { list-style: none; padding: 0; margin: 0; }

@@ -5,6 +5,27 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { loadContent } from '../scripts/content.mjs'
 import { homeSections } from '../scripts/homepage.mjs'
+import { parse as parseHtml } from '@vue/compiler-dom'
+
+test('the selected batch preserves every source word and leaves other posts on hold', () => {
+  const expected = JSON.parse(readFileSync('tests/migration-text.json', 'utf8'))
+  const text = node => {
+    if (node.type === 2) return node.content
+    if (node.type === 1 && node.props.some(prop => prop.name === 'data-photo-pending')) return ''
+    const children = (node.children || []).map(text).join('')
+    return /^(p|div|figure|li|ul|ol|blockquote|br|h[1-6])$/.test(node.tag || '') ? ` ${children} ` : children
+  }
+  const { documents, posts } = loadContent()
+  assert.equal(Object.keys(expected).length, 6)
+  assert.equal(posts.filter(post => !post.placeholder).length, 1)
+  for (const [path, sourceText] of Object.entries(expected)) {
+    const document = documents.find(doc => doc.path === path)
+    const rendered = text(parseHtml(document.html, { whitespace: 'preserve' })).replace(/\s+/g, ' ').trim()
+    assert.equal(rendered, sourceText, path)
+    assert.doesNotMatch(document.html, /<(?:form|input|textarea|select|iframe|script)\b/i)
+    assert.doesNotMatch(document.html, /<img[^>]+src="https?:/i)
+  }
+})
 
 test('homepage rendering preserves the complete copy, local images and inactive controls', () => {
   const home = loadContent().documents.find(doc => doc.path === '/')
@@ -20,7 +41,7 @@ test('homepage rendering preserves the complete copy, local images and inactive 
     assert.ok(readFileSync(join('public', image)).length > 0)
   }
   assert.doesNotMatch(home.html, /<form|<input|<iframe|<script/i)
-  assert.match(home.html, /href="https:\/\/leslietourish.com\/services\/"/)
+  assert.match(home.html, /href="\/services\/"/)
   assert.match(home.html, /<p>Contact Me to Schedule a Free 15-Minute Therapy Consult<\/p>/)
   const changedOpening = '<h2>Edited introduction</h2><p>Retained content.</p>'
   assert.equal(homeSections(changedOpening).body, changedOpening)
@@ -36,7 +57,8 @@ test('all approved content and archive URLs are explicitly available for static 
   assert.ok(!routes.includes('/what-to-expect/'))
   assert.ok(!routes.includes('/psychotherapy-services/'))
   assert.ok(!routes.includes('/not-a-real-page/'))
-  assert.ok(documents.filter(doc => doc.path !== '/').every(doc => doc.placeholder === true))
+  const imported = new Set([84, 1, 47, 1253, 1198, 649])
+  assert.ok(documents.every(doc => doc.placeholder === !imported.has(doc.sourceId)))
   assert.equal(documents.find(doc => doc.path === '/').placeholder, false)
   // Distinct articles must survive the source's duplicated title.
   assert.equal(posts.filter(post => post.title === 'The Myth of the “Perfect Therapist”').length, 2)
@@ -48,7 +70,7 @@ test('drafts are excluded and Markdown cannot create active forms or script link
     cpSync('content', join(root, 'content'), { recursive: true })
     const sample = readFileSync('content/pages/about.md', 'utf8')
     writeFileSync(join(root, 'content/pages/about.md'), sample + '\n<script>alert(1)</script>\n\n<form action="/collect"><input name="private"></form>\n\n[Unsafe](javascript:alert%281%29)\n\n[Safe](/contact/)\n')
-    writeFileSync(join(root, 'content/pages/draft.md'), sample.replace('path: "/about/"', 'path: "/draft-only/"') .replace('placeholder: true', 'placeholder: true\ndraft: true'))
+    writeFileSync(join(root, 'content/pages/draft.md'), sample.replace('path: "/about/"', 'path: "/draft-only/"') .replace('placeholder: false', 'placeholder: false\ndraft: true'))
     const result = loadContent(root)
     assert.ok(!result.routes.includes('/draft-only/'))
     const html = result.documents.find(doc => doc.path === '/about/').html

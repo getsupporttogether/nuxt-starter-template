@@ -14,7 +14,7 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
       <div class="article-body reading-column">
         <ContentPlaceholder v-if="article.placeholder" label="Article awaiting migration" />
         <div class="prose" v-html="article.html" />
-        <p class="article-image-note">Article imagery, captions, and alternative text await migration.</p>
+        <p v-if="article.placeholder" class="article-image-note">Article imagery, captions, and alternative text await migration.</p>
         <NuxtLink class="text-link article-back" to="/blog/"><span aria-hidden="true">←</span> Back to Blog</NuxtLink>
       </div>
     </article>
