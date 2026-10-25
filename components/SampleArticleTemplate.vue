@@ -10,7 +10,6 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
 <template>
   <main id="main-content" tabindex="-1" class="sample-article">
     <article>
-      <nav class="breadcrumbs shell" aria-label="Breadcrumb"><NuxtLink to="/">Home</NuxtLink><span aria-hidden="true">/</span><NuxtLink to="/blog/">Blog</NuxtLink><span aria-hidden="true">/</span><span aria-current="page">Article</span></nav>
       <header class="sample-hero">
         <!-- Reserved image layer: replace only with the user's approved hero asset. -->
         <div class="sample-hero-image" aria-hidden="true" />

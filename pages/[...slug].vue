@@ -4,6 +4,7 @@ definePageMeta({ key: route => route.path })
 const route = useRoute()
 const path = route.path.endsWith('/') ? route.path : `${route.path}/`
 const page = documents.find(item => item.path === path)
+const faq = documents.find(item => item.sourceId === 1198)
 const archive = archives.find(item => item.path === path)
 if (!page && !archive) throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 usePageMetadata(page || archive)
@@ -18,6 +19,9 @@ usePageMetadata(page || archive)
       <p>The contact form is not active. Its fields, privacy wording, and processing service require approval before implementation.</p>
       <p class="contact-status"><span aria-hidden="true">●</span> No inquiries can be sent or stored through this preview.</p>
     </section>
-    <nav v-if="page.path === '/mental-health-resources/'" class="resource-child" aria-label="Mental Health Resources pages"><NuxtLink class="text-link" to="/mental-health-resources/frequently-asked-therapy-questions/">Frequently Asked Questions <span aria-hidden="true">↗</span></NuxtLink></nav>
+    <section v-if="page.path === '/mental-health-resources/'" id="faq" class="prose resource-child" aria-labelledby="combined-faq-title">
+      <h2 id="combined-faq-title">Frequently Asked Questions</h2>
+      <div v-html="faq.html" />
+    </section>
   </PageTemplate>
 </template>

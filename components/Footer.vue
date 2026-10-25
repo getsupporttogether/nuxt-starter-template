@@ -5,14 +5,13 @@ import { navigation } from '~/data/site'
   <footer class="site-footer">
     <div class="shell footer-main">
       <div>
-        <NuxtLink class="wordmark footer-wordmark" to="/">Leslie Tourish<span class="wordmark-subtitle">Psychotherapy</span></NuxtLink>
+        <NuxtLink class="wordmark footer-wordmark" to="/" aria-label="Leslie Tourish Psychotherapy, Home"><img class="site-logo" src="/images/brand/leslie-horizontal.png" alt="" width="10417" height="3125" loading="lazy" decoding="async"></NuxtLink>
         <p class="footer-note">A website in progress.<br>Original content and approved branding to follow.</p>
       </div>
       <nav aria-label="Footer navigation">
         <p class="eyebrow">Explore</p>
         <ul class="footer-links">
           <li v-for="item in navigation" :key="item.path"><NuxtLink :to="item.path">{{ item.title }}</NuxtLink></li>
-          <li><NuxtLink to="/mental-health-resources/frequently-asked-therapy-questions/">Frequently Asked Questions</NuxtLink></li>
         </ul>
       </nav>
       <div class="footer-status">

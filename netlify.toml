@@ -18,3 +18,16 @@
   from = "/home/"
   to = "/"
   status = 301
+
+# Preserve both original FAQ URL forms after combining its content into Resources.
+[[redirects]]
+  from = "/mental-health-resources/frequently-asked-therapy-questions/"
+  to = "/mental-health-resources/#faq"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mental-health-resources/frequently-asked-therapy-questions"
+  to = "/mental-health-resources/#faq"
+  status = 301
+  force = true

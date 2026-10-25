@@ -230,3 +230,8 @@ em { font-weight: 400; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
+
+/* Supplied brand artwork; proportions retained at every viewport. */
+.site-logo { display: block; width: 260px; max-width: 100%; height: auto; }
+.site-navigation, .menu-toggle, .footer-links { font-family: var(--display); }
+@media (max-width: 600px) { .site-header .site-logo { width: 210px; } }

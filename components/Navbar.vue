@@ -13,7 +13,7 @@ const active = path => path === '/' ? route.path === '/' : route.path.startsWith
   <header class="site-header" @keydown.esc="closeMenu">
     <div class="shell header-inner">
       <NuxtLink class="wordmark" to="/" aria-label="Leslie Tourish Psychotherapy, Home">
-        <span>Leslie Tourish</span><span class="wordmark-subtitle">Psychotherapy</span>
+        <img class="site-logo" src="/images/brand/leslie-horizontal.png" alt="" width="10417" height="3125">
       </NuxtLink>
       <button ref="menuButton" class="menu-toggle" type="button" :aria-expanded="open" aria-controls="site-navigation" @click="open = !open">
         {{ open ? 'Close' : 'Menu' }} <span aria-hidden="true">{{ open ? '−' : '+' }}</span>
