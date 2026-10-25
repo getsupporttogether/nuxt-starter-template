@@ -9,20 +9,23 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
 </script>
 <template>
   <main id="main-content" tabindex="-1" class="sample-article">
-    <article class="shell">
-      <nav class="breadcrumbs" aria-label="Breadcrumb"><NuxtLink to="/">Home</NuxtLink><span aria-hidden="true">/</span><NuxtLink to="/blog/">Blog</NuxtLink><span aria-hidden="true">/</span><span aria-current="page">Article</span></nav>
+    <article>
+      <nav class="breadcrumbs shell" aria-label="Breadcrumb"><NuxtLink to="/">Home</NuxtLink><span aria-hidden="true">/</span><NuxtLink to="/blog/">Blog</NuxtLink><span aria-hidden="true">/</span><span aria-current="page">Article</span></nav>
       <header class="sample-hero">
         <!-- Reserved image layer: replace only with the user's approved hero asset. -->
         <div class="sample-hero-image" aria-hidden="true" />
-        <div class="sample-hero-copy">
+        <div class="sample-hero-copy shell">
           <p class="eyebrow">From the blog</p>
           <h1>{{ article.title }}</h1>
           <p><time :datetime="article.published">{{ formatDate(article.published) }}</time></p>
           <p class="sample-asset-note">Hero photograph to be supplied</p>
         </div>
       </header>
-      <div class="sample-columns">
-        <div class="sample-copy prose" v-html="article.html" />
+      <div class="sample-columns shell">
+        <div class="sample-reading">
+          <div class="sample-copy prose" v-html="article.html" />
+          <div class="sample-closer"><img src="/images/blog/bluebonnet-closer.png" alt="" width="423" height="733" loading="lazy" decoding="async"></div>
+        </div>
         <aside class="sample-sidebar" aria-label="Explore the blog">
           <section aria-labelledby="sample-categories">
             <h2 id="sample-categories">Categories</h2>
@@ -43,25 +46,26 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
           <NuxtLink class="sample-more" to="/blog/">Read more articles <span aria-hidden="true">→</span></NuxtLink>
         </aside>
       </div>
-      <div class="sample-closer">
-        <img src="/images/blog/bluebonnet-closer.png" alt="" width="423" height="733" loading="lazy" decoding="async">
-      </div>
+      <BlogClosingSection />
     </article>
   </main>
 </template>
 <style scoped>
-.sample-article { padding-block: 38px 64px; font-family: var(--body); }
-.sample-hero { position: relative; min-height: 360px; height: clamp(360px, 35vw, 480px); isolation: isolate; display: grid; align-items: center; margin-block: 28px 56px; border: 4px solid #C89B55; background: #27211e; color: var(--linen); }
+.sample-article { padding-block: 38px 0; font-family: var(--body); }
+.sample-hero { position: relative; min-height: 360px; height: clamp(360px, 35vw, 480px); isolation: isolate; display: grid; align-items: center; margin-block: 28px 56px; border-block: 4px solid #C89B55; background: #27211e; color: var(--linen); }
 .sample-hero-image { position: absolute; inset: 0; z-index: -2; background-position: center; background-size: cover; }
 .sample-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #27211ef2, #27211eb3); }
-.sample-hero-copy { padding: clamp(24px, 5vw, 64px); max-width: 900px; }
+.sample-hero-copy { width: 100%; padding-block: 32px; }
+.sample-hero h1 { max-width: 800px; }
 .sample-hero h1 { color: #8897B3; font-family: var(--display); font-size: clamp(2.25rem, 4.7vw, 4.5rem); margin-block: 16px 24px; }
 .sample-asset-note { font-size: .8rem; margin-top: 14px; }
-.sample-columns { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
-.sample-copy { min-width: 0; }
+.sample-columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, calc((100% - clamp(32px, 5vw, 72px)) / 3.2 - 20px)); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.sample-copy, .sample-reading { min-width: 0; }
+.sample-copy :deep(> :last-child) { margin-bottom: 0; }
 .sample-sidebar { min-width: 0; border-left: 1px solid var(--line); padding-left: 28px; }
 .sample-sidebar section + section { margin-top: 30px; }
-.sample-sidebar h2, .sample-copy :deep(:is(h2,h3,h4,h5,h6)) { color: #8897B3; background: #27211e; padding: 12px 16px; font-family: var(--display); font-size: 1.6rem; line-height: 1.3; letter-spacing: 0; }
+.sample-copy :deep(:is(h2,h3,h4,h5,h6)) { color: #8897B3; background: #27211e; padding: 12px 16px; font-family: var(--display); font-size: 1.6rem; line-height: 1.3; letter-spacing: 0; }
+.sample-sidebar h2 { color: #8897B3; background: transparent; padding: 0; font-family: var(--display); font-weight: 700; font-size: 1.6rem; line-height: 1.3; letter-spacing: 0; }
 .sample-sidebar ul { list-style: none; padding: 0; margin: 16px 0 0; }
 .sample-sidebar li { margin-bottom: 8px; overflow-wrap: anywhere; }
 .sample-sidebar a { display: inline-block; padding-block: 8px; }
@@ -71,8 +75,8 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
 .sample-more { display: flex !important; justify-content: space-between; gap: 12px; margin-top: 28px; padding: 14px 18px !important; background: var(--cocoa); color: var(--linen); text-decoration: none; border: 2px solid #C89B55; }
 .sample-copy :deep(img), .sample-copy :deep([data-photo-pending]) { border: 4px solid #C89B55; padding: 12px; }
 .sample-copy :deep(blockquote) { border: 2px solid #C89B55; border-left-width: 6px; padding: 24px; margin: 28px 0; background: #C89B551a; }
-.sample-closer { min-height: 140px; display: grid; place-items: center; margin-top: 60px; padding: 24px; border-block: 2px solid #C89B55; text-align: center; font-size: .9rem; }
-.sample-closer img { display: block; width: clamp(120px, 18vw, 180px); max-width: 100%; height: auto; border: 2px solid #C89B55; }
+.sample-closer { margin-top: 20px; padding: 0; border: 0; }
+.sample-closer img { display: block; width: clamp(24px, 3.6vw, 36px); max-width: 100%; height: auto; border: 0; }
 @media (max-width: 800px) {
   .sample-columns { grid-template-columns: minmax(0,1fr); }
   .sample-sidebar { border-left: 0; padding-left: 0; padding-top: 32px; border-top: 1px solid var(--line); }
