@@ -1,4 +1,5 @@
 <script setup>
+import recentExcerpts from '~/data/recent-article-excerpts.json'
 import { documents, archives } from '#build/practice-content.mjs'
 const props = defineProps({ article: { type: Object, required: true } })
 const posts = documents.filter(item => item.kind === 'post').sort((a, b) => b.published.localeCompare(a.published))
@@ -37,7 +38,8 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
           <section aria-labelledby="sample-recent">
             <h2 id="sample-recent">Recent articles</h2>
             <ul class="sample-recent"><li v-for="post in recentPosts" :key="post.path">
-              <NuxtLink v-if="!post.placeholder" :to="post.path">{{ post.title }}</NuxtLink><span v-else>{{ post.title }}</span>
+              <NuxtLink v-if="!post.placeholder" class="sample-recent-title" :to="post.path">{{ post.title }}</NuxtLink><span v-else class="sample-recent-title">{{ post.title }}</span>
+              <p v-if="recentExcerpts[post.sourceId]" class="sample-recent-excerpt">{{ recentExcerpts[post.sourceId] }}</p>
               <time :datetime="post.published">{{ formatDate(post.published) }}</time>
               <small v-if="post.placeholder">Article migration pending</small>
             </li></ul>
@@ -70,6 +72,8 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
 .sample-sidebar a { display: inline-block; padding-block: 8px; }
 .sample-tags { display: flex; flex-wrap: wrap; gap: 6px 14px; }
 .sample-recent li { padding-block: 12px; border-bottom: 1px solid var(--line); }
+.sample-recent .sample-recent-title { font-weight: 700; }
+.sample-recent-excerpt { margin-top: 6px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
 .sample-recent time, .sample-recent small { display: block; font-size: .8rem; margin-top: 6px; }
 .sample-more { display: flex !important; justify-content: space-between; gap: 12px; margin-top: 28px; padding: 14px 18px !important; background: var(--cocoa); color: var(--linen); text-decoration: none; border: 2px solid #C89B55; }
 .sample-copy :deep(img), .sample-copy :deep([data-photo-pending]) { border: 4px solid #C89B55; padding: 12px; }
