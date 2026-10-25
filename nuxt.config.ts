@@ -3,6 +3,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   app: { head: { link: [{ key: 'mrs-eaves-adobe', rel: 'stylesheet', href: 'https://use.typekit.net/cbj5spq.css' }] } },
+  // Keep hosted forms absent until plan/settings and delivery testing are approved.
+  appConfig: { websiteFormsEnabled: process.env.LESLIE_ENABLE_FORMS === 'true' },
   devtools: { enabled: false },
   css: ["~/assets/css/main.css"],
   vite: {

@@ -13,10 +13,7 @@ usePageMetadata(page || archive)
   <ArchiveTemplate v-if="archive" :archive="archive" />
   <SampleArticleTemplate v-else-if="page.kind === 'post'" :article="page" />
   <PageTemplate v-else :page="page">
-    <section v-if="page.path === '/contact/'" class="inactive-contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact Leslie Tourish</h2>
-      <p>Online inquiries are unavailable. Please call <a href="tel:+15126951660">(512) 695-1660</a> or email <a href="mailto:leslie@leslietourish.com">leslie@leslietourish.com</a>.</p>
-    </section>
+    <ContactRequests v-if="page.path === '/contact/'" />
     <section v-if="page.path === '/mental-health-resources/'" id="faq" class="prose resource-child" aria-labelledby="combined-faq-title">
       <h2 id="combined-faq-title">Frequently Asked Questions</h2>
       <div v-html="faq.html" />

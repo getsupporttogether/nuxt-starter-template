@@ -1730,6 +1730,20 @@
       "source_text": "3975 E US Highway 290, Dripping Springs, TX 78620",
       "approved_text": "4207 East U.S. Highway 290, Suite 111, Dripping Springs, TX 78620",
       "authorization": "User confirmed Contact address and requested both privacy pages updated, 2026-10-25. All other policy text unchanged."
+    },
+    {
+      "sourceIds": [
+        1187,
+        1892
+      ],
+      "field": "website-form disclosure and revision date",
+      "approved_paragraphs": [
+        "When you submit a website form, I collect the contact details, request type and message you provide to respond to your inquiry. Netlify processes and stores these submissions and sends their contents to me by email. Blog-update requests are handled manually and do not automatically enroll you in a mailing list.",
+        "Please do not include sensitive health information, medical records, payment details or urgent requests. These forms are not a secure clinical messaging service and should not be used for emergencies."
+      ],
+      "approved_revision_date": "October 24, 2026",
+      "placement": "Immediately before Confidential Information",
+      "authorization": "Explicit user approval on October 24, 2026 local time. Forms remain inactive; destination email not confirmed. No other policy wording changed."
     }
   ],
   "excluded_types": [

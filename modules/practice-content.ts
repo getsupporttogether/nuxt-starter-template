@@ -14,7 +14,7 @@ export default defineNuxtModule({
       write: true,
     })
     nuxt.options.nitro.prerender ||= {}
-    nuxt.options.nitro.prerender.routes = content.routes
+    nuxt.options.nitro.prerender.routes = [...content.routes, '/request-received/']
     nuxt.options.nitro.prerender.failOnError = true
     nuxt.options.nitro.prerender.crawlLinks = false
     // Markdown is read only when preparing/generating the website, never at runtime.

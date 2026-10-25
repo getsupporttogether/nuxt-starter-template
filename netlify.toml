@@ -31,3 +31,7 @@
   to = "/mental-health-resources/#faq"
   status = 301
   force = true
+
+# Owner-approved form testing in Deploy Previews only; production stays disabled.
+[context.deploy-preview.environment]
+  LESLIE_ENABLE_FORMS = "true"
