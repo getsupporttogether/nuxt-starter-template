@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 import { parse } from 'yaml'
 import { Marked } from 'marked'
 
+const blogMedia = JSON.parse(readFileSync(new URL('../data/blog-media.json', import.meta.url), 'utf8'))
 const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
 const safeUrl = href => /^(https?:\/\/|mailto:|tel:|\/(?!\/)|#)/i.test(href || '')
 const markdown = new Marked({
@@ -14,10 +15,11 @@ const markdown = new Marked({
       return safeUrl(href) ? `<a href="${escape(href)}">${text}</a>` : text
     },
     image({ href, text }) {
+      href = blogMedia.sources[(href || '').split('?')[0]] || href
       if (/^https?:\/\//i.test(href || '')) {
         // Preserve source references in Markdown; photographs are supplied by the owner.
         // Do not hotlink WordPress assets while the replacement photographs are pending.
-        return `<span class="article-image-note" data-photo-pending="true" role="img" aria-label="${escape(text || 'Photograph to be supplied')}"><span aria-hidden="true">Photograph to be supplied</span></span>`
+        return ''
       }
       return /^\/(?!\/)/.test(href || '')
         ? `<img src="${escape(href)}" alt="${escape(text)}" loading="lazy" decoding="async">` : escape(text)
@@ -47,7 +49,7 @@ export function loadContent(root = process.cwd()) {
         }
       }
       paths.add(meta.path)
-      documents.push({ ...meta, html: markdown.parse(match[2]) })
+      documents.push({ ...meta, hero: blogMedia.posts[String(meta.sourceId)]?.hero || null, html: meta.placeholder ? '' : markdown.parse(match[2]) })
     }
   }
   const posts = documents.filter(doc => doc.kind === 'post').sort((a, b) => b.published.localeCompare(a.published))

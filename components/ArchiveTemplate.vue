@@ -5,10 +5,9 @@ defineProps({ archive: { type: Object, required: true } })
   <main id="main-content" tabindex="-1">
     <header class="page-heading shell">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><NuxtLink to="/">Home</NuxtLink><span aria-hidden="true">/</span><template v-if="archive.path !== '/blog/'"><NuxtLink to="/blog/">Blog</NuxtLink><span aria-hidden="true">/</span></template><span aria-current="page">{{ archive.title }}</span></nav>
-      <p class="eyebrow">{{ archive.type === 'blog' ? 'The blog' : 'Existing blog archive' }}</p>
+      <p class="eyebrow">{{ archive.type === 'blog' ? 'The blog' : 'Blog archive' }}</p>
       <h1>{{ archive.title }}</h1>
-      <p class="intro">{{ archive.type === 'blog' ? 'Articles from the original website.' : 'An index of articles from the original website.' }}</p>
-      <p class="muted">Published titles and dates are preserved. Article content is awaiting migration.</p>
+      <p class="intro">{{ archive.type === 'blog' ? 'Articles by Leslie Tourish.' : 'Articles by Leslie Tourish.' }}</p>
     </header>
     <div class="shell archive-body">
       <PostList :posts="archive.posts" />

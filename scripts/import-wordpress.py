@@ -1,7 +1,7 @@
-"""Import only the approved review batch; never ingest feedback or other posts.
+"""Import the approved public practice pages and all blog posts; never ingest feedback.
 
 Usage: python3 scripts/import-wordpress.py /path/to/counseling-export.xml
-Home, four core pages and one representative article only. No bulk import.
+Home, four core pages and all published blog posts. Other pages remain separate.
 The export itself is never copied into the repo.
 """
 from pathlib import Path
@@ -45,6 +45,8 @@ def literal(s):
     s = re.sub(r'([\\`*\[\]])', r'\\\1', s)
     return re.sub(r'(?m)^(\s*)([#>+-]|\d+[.)])(?=\s)', r'\1\\\2', s)
 
+def item_type(item): return item.findtext('w:post_type', namespaces=NS)
+
 def main(source):
     channel = ET.parse(source).getroot().find('channel')
     assert channel.findtext('link') == 'https://leslietourish.com', 'Wrong site export'
@@ -73,7 +75,7 @@ def main(source):
     expectations = {}
     existing_images = {i['source_url']: i['target_local_asset'] for i in json.loads((ROOT/'docs/homepage-image-provenance.json').read_text())['images'] if i.get('status') == 'downloaded'}
     for path, ident, route, front in records:
-        if ident not in SELECTED: continue
+        if ident not in SELECTED and item_type(public[ident]) != 'post': continue
         item = public[ident]
         report['source_url_map'].append({'sourceId': int(ident), 'old_url': item.findtext('link'), 'target': route,
                                         'action': 'preserve' if urlsplit(item.findtext('link')).path == route else 'redirect'})
@@ -114,6 +116,14 @@ def main(source):
         expanded = re.sub(r'<!--\s*wp:social-link\s+(\{.*?\})\s*/\s*-->', social, expanded)
         dom = DOM(); dom.feed(expanded)
         expectations[route] = normalized(plain(dom.root))
+        def preserve_adjacent_text(node):
+            if isinstance(node, str): return
+            for index, child in enumerate(node.children):
+                if isinstance(child, Node) and child.tag in {'em','i','strong','b'} and index+1 < len(node.children):
+                    following=node.children[index+1]
+                    if isinstance(following,str) and following and not following[0].isspace(): child.tag='span'
+                preserve_adjacent_text(child)
+        if item_type(item) == 'post': preserve_adjacent_text(dom.root)
         def render(n, depth=0):
             if isinstance(n, str): return literal(n)
             tag, a = n.tag, n.attrs

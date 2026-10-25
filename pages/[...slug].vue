@@ -11,13 +11,11 @@ usePageMetadata(page || archive)
 </script>
 <template>
   <ArchiveTemplate v-if="archive" :archive="archive" />
-  <SampleArticleTemplate v-else-if="page.kind === 'post' && page.sourceId === 649" :article="page" />
-  <ArticleTemplate v-else-if="page.kind === 'post'" :article="page" />
+  <SampleArticleTemplate v-else-if="page.kind === 'post'" :article="page" />
   <PageTemplate v-else :page="page">
-    <section v-if="page.path === '/contact/'" class="inactive-contact" aria-labelledby="contact-preview-title">
-      <h2 id="contact-preview-title">Contact form placeholder</h2>
-      <p>The contact form is not active. Its fields, privacy wording, and processing service require approval before implementation.</p>
-      <p class="contact-status"><span aria-hidden="true">●</span> No inquiries can be sent or stored through this preview.</p>
+    <section v-if="page.path === '/contact/'" class="inactive-contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Leslie Tourish</h2>
+      <p>Online inquiries are unavailable. Please call <a href="tel:+15126951660">(512) 695-1660</a>.</p>
     </section>
     <section v-if="page.path === '/mental-health-resources/'" id="faq" class="prose resource-child" aria-labelledby="combined-faq-title">
       <h2 id="combined-faq-title">Frequently Asked Questions</h2>

@@ -7,7 +7,7 @@ import { loadContent } from '../scripts/content.mjs'
 import { homeSections } from '../scripts/homepage.mjs'
 import { parse as parseHtml } from '@vue/compiler-dom'
 
-test('the selected batch preserves every source word and leaves other posts on hold', () => {
+test('all imported practice pages and 26 posts preserve source text', () => {
   const expected = JSON.parse(readFileSync('tests/migration-text.json', 'utf8'))
   const text = node => {
     if (node.type === 2) return node.content
@@ -16,8 +16,8 @@ test('the selected batch preserves every source word and leaves other posts on h
     return /^(p|div|figure|li|ul|ol|blockquote|br|h[1-6])$/.test(node.tag || '') ? ` ${children} ` : children
   }
   const { documents, posts } = loadContent()
-  assert.equal(Object.keys(expected).length, 6)
-  assert.equal(posts.filter(post => !post.placeholder).length, 1)
+  assert.equal(Object.keys(expected).length, 31)
+  assert.equal(posts.filter(post => !post.placeholder).length, 26)
   for (const [path, sourceText] of Object.entries(expected)) {
     const document = documents.find(doc => doc.path === path)
     const rendered = text(parseHtml(document.html, { whitespace: 'preserve' })).replace(/\s+/g, ' ').trim()
@@ -58,7 +58,7 @@ test('all approved content and archive URLs are explicitly available for static 
   assert.ok(!routes.includes('/psychotherapy-services/'))
   assert.ok(!routes.includes('/not-a-real-page/'))
   const imported = new Set([84, 1, 47, 1253, 1198, 649])
-  assert.ok(documents.every(doc => doc.placeholder === !imported.has(doc.sourceId)))
+  assert.ok(documents.every(doc => doc.placeholder === !(doc.kind === 'post' || imported.has(doc.sourceId))))
   assert.equal(documents.find(doc => doc.path === '/').placeholder, false)
   // Distinct articles must survive the source's duplicated title.
   assert.equal(posts.filter(post => post.title === 'The Myth of the “Perfect Therapist”').length, 2)

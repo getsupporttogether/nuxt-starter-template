@@ -14,11 +14,9 @@ defineProps({ page: { type: Object, required: true } })
     </div>
     <div class="shell page-body-layout">
       <div class="reading-column">
-        <ContentPlaceholder v-if="page.placeholder" />
         <div class="prose" v-html="page.html" /><slot />
       </div>
       <aside class="page-aside">
-        <p class="eyebrow">In this preview</p><p>Existing page.<br>Original URL.<br>A new visual foundation.</p>
         <NuxtLink v-if="page.path !== '/contact/'" class="text-link" to="/contact/">Contact <span aria-hidden="true">↗</span></NuxtLink>
       </aside>
     </div>

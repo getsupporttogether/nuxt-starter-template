@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
+@font-face { font-family: "Source Sans 3"; src: url('/fonts/source-sans-3/SourceSans3.ttf') format('truetype'); font-style: normal; font-weight: 200 900; font-display: swap; }
+@font-face { font-family: "Source Sans 3"; src: url('/fonts/source-sans-3/SourceSans3-Italic.ttf') format('truetype'); font-style: italic; font-weight: 200 900; font-display: swap; }
+
 :root {
+  --page-background: #FFFFFF;
+  --body-text: #444444;
   --linen: #F7F3EB;
   --teal: #5F7D7E;
   --gold: #C89B55;
@@ -13,7 +18,7 @@
 }
 * { box-sizing: border-box; }
 html { scroll-padding-top: 2rem; }
-body { margin: 0; background: var(--linen); color: var(--cocoa); font-family: var(--body); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--page-background); color: var(--body-text); font-family: var(--body); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 ::selection { background: #e9d7b7; color: var(--cocoa); }
 a { color: inherit; text-underline-offset: .25em; }
 button, input, textarea { font: inherit; }

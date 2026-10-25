@@ -20,7 +20,7 @@ tags: []
 
 Receiving support no matter where you are in your mental health journey is like receiving a big hug.  Whether your best friend joins you on the couch for a "cheer me up movie," you check yourself into a mental health program, or you're looking for a little learning and self discovery, I hope these ideas meet you where you are.
 
-![](<https://leslietourish.com/wp-content/uploads/2024/04/leslies-list-stop-walking-on-eggshells-book-for-mental-health.png>)
+![](</images/resources/stop-walking-on-eggshells.png>)
 
 ## Create anything
 

@@ -4,8 +4,8 @@ import { documents, archives } from '#build/practice-content.mjs'
 const props = defineProps({ article: { type: Object, required: true } })
 const posts = documents.filter(item => item.kind === 'post').sort((a, b) => b.published.localeCompare(a.published))
 const recentPosts = posts.filter(item => item.path !== props.article.path).slice(0, 4)
-const categories = archives.filter(item => item.type === 'category' && item.page === 1)
-const tags = props.article.tags.filter(tag => archives.some(item => item.path === `/tag/${tag.slug}/`))
+const categories = archives.filter(item => item.type === 'category' && item.page === 1).sort((a, b) => a.title.localeCompare(b.title, 'en', { sensitivity: 'base' }))
+const tags = props.article.tags.filter(tag => archives.some(item => item.path === `/tag/${tag.slug}/`)).sort((a, b) => a.title.localeCompare(b.title, 'en', { sensitivity: 'base' }))
 const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(value))
 </script>
 <template>
@@ -13,12 +13,11 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
     <article>
       <header class="sample-hero">
         <!-- Reserved image layer: replace only with the user's approved hero asset. -->
-        <div class="sample-hero-image" aria-hidden="true" />
+        <img v-if="article.hero" class="sample-hero-image" :src="article.hero" alt="" fetchpriority="high" decoding="async">
         <div class="sample-hero-copy shell">
           <p class="eyebrow">From the blog</p>
           <h1>{{ article.title }}</h1>
           <p><time :datetime="article.published">{{ formatDate(article.published) }}</time></p>
-          <p class="sample-asset-note">Hero photograph to be supplied</p>
         </div>
       </header>
       <div class="sample-columns shell">
@@ -29,7 +28,7 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
         <aside class="sample-sidebar" aria-label="Explore the blog">
           <section aria-labelledby="sample-categories">
             <h2 id="sample-categories">Categories</h2>
-            <ul><li v-for="category in categories" :key="category.path"><NuxtLink :to="category.path">{{ category.title }}</NuxtLink></li></ul>
+            <ul class="sample-tags"><li v-for="category in categories" :key="category.path"><NuxtLink :to="category.path">{{ category.title }}</NuxtLink></li></ul>
           </section>
           <section aria-labelledby="sample-tags">
             <h2 id="sample-tags">Tags</h2>
@@ -41,7 +40,6 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
               <NuxtLink v-if="!post.placeholder" class="sample-recent-title" :to="post.path">{{ post.title }}</NuxtLink><span v-else class="sample-recent-title">{{ post.title }}</span>
               <p v-if="recentExcerpts[post.sourceId]" class="sample-recent-excerpt">{{ recentExcerpts[post.sourceId] }}</p>
               <time :datetime="post.published">{{ formatDate(post.published) }}</time>
-              <small v-if="post.placeholder">Article migration pending</small>
             </li></ul>
           </section>
           <NuxtLink class="sample-more" to="/blog/">Read more articles <span aria-hidden="true">→</span></NuxtLink>
@@ -54,7 +52,7 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
 <style scoped>
 .sample-article { padding-block: 38px 0; font-family: var(--body); }
 .sample-hero { position: relative; min-height: 360px; height: clamp(360px, 35vw, 480px); isolation: isolate; display: grid; align-items: center; margin-block: 28px 56px; border-block: 4px solid #C89B55; background: #27211e; color: var(--linen); }
-.sample-hero-image { position: absolute; inset: 0; z-index: -2; background-position: center; background-size: cover; }
+.sample-hero-image { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .sample-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #27211ef2, #27211eb3); }
 .sample-hero-copy { width: 100%; padding-block: 32px; }
 .sample-hero h1 { max-width: 800px; }
@@ -66,7 +64,7 @@ const formatDate = value => new Intl.DateTimeFormat('en-US', { month: 'long', da
 .sample-sidebar { min-width: 0; border-left: 1px solid var(--line); padding-left: 28px; }
 .sample-sidebar section + section { margin-top: 30px; }
 .sample-copy :deep(:is(h2,h3,h4,h5,h6)) { color: #8897B3; background: #27211e; padding: 12px 16px; font-family: var(--display); font-size: 1.6rem; line-height: 1.3; letter-spacing: 0; }
-.sample-sidebar h2 { color: #8897B3; background: transparent; padding: 0; font-family: var(--display); font-weight: 700; font-size: 1.6rem; line-height: 1.3; letter-spacing: 0; }
+.sample-sidebar h2 { color: #5F7D7E; background: transparent; padding: 0; font-family: var(--display); font-weight: 700; font-size: calc(1.6rem - 2pt); line-height: 1.3; letter-spacing: 0; }
 .sample-sidebar ul { list-style: none; padding: 0; margin: 16px 0 0; }
 .sample-sidebar li { margin-bottom: 8px; overflow-wrap: anywhere; }
 .sample-sidebar a { display: inline-block; padding-block: 8px; }

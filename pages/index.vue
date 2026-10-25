@@ -22,13 +22,6 @@ const links = [
         <NuxtLink class="text-link" to="/about/">About <span aria-hidden="true">↗</span></NuxtLink>
       </div>
       <div v-if="home.image" class="image-placeholder home-photo" v-html="home.image" />
-      <div v-else class="image-placeholder" role="img" aria-label="Placeholder for approved photography; no image has been selected">
-        <div class="image-placeholder-inner">
-          <span class="eyebrow">Imagery to follow</span>
-          <span class="image-placeholder-title">Room for<br><em>the next chapter.</em></span>
-          <span class="image-placeholder-caption">Approved photography placeholder</span>
-        </div>
-      </div>
     </section>
     <section class="shell home-copy" aria-label="Therapy with Leslie Tourish">
       <div class="reading-column prose" v-html="home.body" />
