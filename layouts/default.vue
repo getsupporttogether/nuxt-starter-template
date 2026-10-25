@@ -1,5 +1,6 @@
 <template>
-  <Navbar></Navbar>
-  <slot></slot>
-  <Footer></Footer>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <Navbar />
+  <slot />
+  <Footer />
 </template>

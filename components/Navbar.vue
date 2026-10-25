@@ -1,33 +1,33 @@
 <script setup>
-const menuitems = [
-  {
-    title: "Sign up",
-    url: "https://app.netlify.com/signup",
-  },
-  {
-    title: "Log in",
-    url: "https://app.netlify.com/login",
-  },
-];
+import { navigation } from '~/data/site'
+const route = useRoute()
+const open = ref(false)
+const menuButton = ref(null)
+watch(() => route.fullPath, () => { open.value = false })
+function closeMenu() {
+  if (open.value) { open.value = false; menuButton.value?.focus() }
+}
+const active = path => path === '/' ? route.path === '/' : route.path.startsWith(path)
 </script>
-
 <template>
-  <Container>
-    <header class="flex flex-row flex-wrap items-center justify-between my-4 gap-x-6 gap-y-4">
-      <div class="flex items-center justify-between">
-        <a href="/" class="text-2xl font-bold text-zinc-800">
-          <span class="text-green-500">&#10070;</span> Nuxt Starter
-        </a>
-      </div>
-      <nav class="flex w-auto">
-        <ul class="flex flex-row gap-3 text-sm">
-          <li v-for="item of menuitems">
-            <a :href="item.url" class="flex px-3 py-2 text-gray-600 border rounded-sm hover:text-gray-800">
-              {{ item.title }}
-            </a>
+  <header class="site-header" @keydown.esc="closeMenu">
+    <div class="shell header-inner">
+      <NuxtLink class="wordmark" to="/" aria-label="Leslie Tourish Psychotherapy, Home">
+        <img class="site-logo" src="/images/brand/leslie-horizontal.png" alt="" width="10417" height="3125">
+      </NuxtLink>
+      <button ref="menuButton" class="menu-toggle" type="button" :aria-expanded="open" aria-controls="site-navigation" @click="open = !open">
+        {{ open ? 'Close' : 'Menu' }} <span aria-hidden="true">{{ open ? '−' : '+' }}</span>
+      </button>
+      <nav id="site-navigation" class="site-navigation" :class="{ 'is-open': open }" aria-label="Main navigation">
+        <ul>
+          <li v-for="item in navigation" :key="item.path" :class="{ 'nav-parent': item.children }">
+            <NuxtLink :to="item.path" :class="{ 'is-active': active(item.path) }" :aria-current="route.path === item.path ? 'page' : undefined">{{ item.title }}</NuxtLink>
+            <ul v-if="item.children" class="nav-children" aria-label="Mental Health Resources pages">
+              <li v-for="child in item.children" :key="child.path"><NuxtLink :to="child.path" :aria-current="route.path === child.path ? 'page' : undefined">{{ child.title }}</NuxtLink></li>
+            </ul>
           </li>
         </ul>
       </nav>
-    </header>
-  </Container>
+    </div>
+  </header>
 </template>

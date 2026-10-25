@@ -1,0 +1,39 @@
+{
+  "Source Sans 3": {
+    "source": "https://github.com/google/fonts/tree/main/ofl/sourcesans3",
+    "license": "SIL Open Font License 1.1; public/fonts/source-sans-3/OFL.txt",
+    "delivery": "Self-hosted variable normal/italic TTF via @font-face; weights200\u2013900; font-display swap",
+    "files": {
+      "SourceSans3-Italic.ttf": "39e3ab05ccd7cb94907c31005bb5bec1d5432f0b096a2b782976e217a540eb6c",
+      "OFL.txt": "09746787287a289323b0ec3cff4d1a4a801331b82b7207c1e186f5d26619a392",
+      "SourceSans3.ttf": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9"
+    }
+  },
+  "Mrs Eaves XL": {
+    "status": "User-approved Adobe Fonts web project; linked once through Nuxt app.head.",
+    "stylesheet": "https://use.typekit.net/cbj5spq.css",
+    "family": "mrs-eaves-xl-serif",
+    "weights": [
+      400,
+      700
+    ],
+    "styles": [
+      "normal",
+      "italic"
+    ],
+    "handling": "Standard family only; Narrow not selected. Adobe serves licensed fonts; no local proprietary font redistribution."
+  },
+  "palette_source": "Branding & Logos/Leslie Tourish Psychotherapy Brand Board.png (visually inspected)",
+  "palette": {
+    "teal": "#5F7D7E",
+    "linen": "#F7F3EB",
+    "gold": "#C89B55",
+    "blue": "#8897B3",
+    "burgundy": "#7A2E2E",
+    "cocoa": "#4C403A"
+  },
+  "user_overrides": {
+    "page_background": "#FFFFFF",
+    "body_text": "#444444"
+  }
+}

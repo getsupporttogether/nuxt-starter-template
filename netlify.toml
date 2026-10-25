@@ -5,3 +5,33 @@
   command = "npm run generate" # how to build your project
   functions = "netlify/functions" # where Netlify Functions live
   publish = "dist" # where the built project lives
+
+# Review foundation only. Remove noindex only as part of an approved launch.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/home/"
+  to = "/"
+  status = 301
+
+# Preserve both original FAQ URL forms after combining its content into Resources.
+[[redirects]]
+  from = "/mental-health-resources/frequently-asked-therapy-questions/"
+  to = "/mental-health-resources/#faq"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mental-health-resources/frequently-asked-therapy-questions"
+  to = "/mental-health-resources/#faq"
+  status = 301
+  force = true
+
+# Owner-approved form testing in Deploy Previews only; production stays disabled.
+[context.deploy-preview.environment]
+  LESLIE_ENABLE_FORMS = "true"
