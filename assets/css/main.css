@@ -13,7 +13,7 @@
   --burgundy: #7A2E2E;
   --cocoa: #4C403A;
   --line: #d9d0c4;
-  --display: "Mrs Eaves XL", "Mrs Eaves XL Serif", Georgia, "Times New Roman", serif;
+  --display: "mrs-eaves-xl-serif", Georgia, "Times New Roman", serif;
   --body: "Source Sans 3", "Segoe UI", Helvetica, sans-serif;
 }
 * { box-sizing: border-box; }

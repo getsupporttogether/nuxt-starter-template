@@ -2,6 +2,7 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
+  app: { head: { link: [{ key: 'mrs-eaves-adobe', rel: 'stylesheet', href: 'https://use.typekit.net/cbj5spq.css' }] } },
   devtools: { enabled: false },
   css: ["~/assets/css/main.css"],
   vite: {

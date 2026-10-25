@@ -10,8 +10,18 @@
     }
   },
   "Mrs Eaves XL": {
-    "status": "No authorized webfont file or Adobe Fonts web-project link found in checked project/brand assets; named stack only, Georgia fallback retained.",
-    "needed": "Licensed WOFF/WOFF2 with web embedding authorization, or Adobe Fonts web project URL."
+    "status": "User-approved Adobe Fonts web project; linked once through Nuxt app.head.",
+    "stylesheet": "https://use.typekit.net/cbj5spq.css",
+    "family": "mrs-eaves-xl-serif",
+    "weights": [
+      400,
+      700
+    ],
+    "styles": [
+      "normal",
+      "italic"
+    ],
+    "handling": "Standard family only; Narrow not selected. Adobe serves licensed fonts; no local proprietary font redistribution."
   },
   "palette_source": "Branding & Logos/Leslie Tourish Psychotherapy Brand Board.png (visually inspected)",
   "palette": {
