@@ -10,6 +10,7 @@ usePageMetadata(page || archive)
 </script>
 <template>
   <ArchiveTemplate v-if="archive" :archive="archive" />
+  <SampleArticleTemplate v-else-if="page.kind === 'post' && page.sourceId === 649" :article="page" />
   <ArticleTemplate v-else-if="page.kind === 'post'" :article="page" />
   <PageTemplate v-else :page="page">
     <section v-if="page.path === '/contact/'" class="inactive-contact" aria-labelledby="contact-preview-title">
