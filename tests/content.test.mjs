@@ -16,7 +16,7 @@ test('all imported practice pages and 26 posts preserve source text', () => {
     return /^(p|div|figure|li|ul|ol|blockquote|br|h[1-6])$/.test(node.tag || '') ? ` ${children} ` : children
   }
   const { documents, posts } = loadContent()
-  assert.equal(Object.keys(expected).length, 31)
+  assert.equal(Object.keys(expected).length, 35)
   assert.equal(posts.filter(post => !post.placeholder).length, 26)
   for (const [path, sourceText] of Object.entries(expected)) {
     const document = documents.find(doc => doc.path === path)
@@ -57,7 +57,7 @@ test('all approved content and archive URLs are explicitly available for static 
   assert.ok(!routes.includes('/what-to-expect/'))
   assert.ok(!routes.includes('/psychotherapy-services/'))
   assert.ok(!routes.includes('/not-a-real-page/'))
-  const imported = new Set([84, 1, 47, 1253, 1198, 649])
+  const imported = new Set([84, 1, 47, 1253, 1198, 649, 50, 1187, 1892, 2929])
   assert.ok(documents.every(doc => doc.placeholder === !(doc.kind === 'post' || imported.has(doc.sourceId))))
   assert.equal(documents.find(doc => doc.path === '/').placeholder, false)
   // Distinct articles must survive the source's duplicated title.

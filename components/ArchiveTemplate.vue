@@ -1,4 +1,5 @@
 <script setup>
+import introduction from '~/data/blog-introduction.json'
 defineProps({ archive: { type: Object, required: true } })
 </script>
 <template>
@@ -6,8 +7,15 @@ defineProps({ archive: { type: Object, required: true } })
     <header class="page-heading shell">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><NuxtLink to="/">Home</NuxtLink><span aria-hidden="true">/</span><template v-if="archive.path !== '/blog/'"><NuxtLink to="/blog/">Blog</NuxtLink><span aria-hidden="true">/</span></template><span aria-current="page">{{ archive.title }}</span></nav>
       <p class="eyebrow">{{ archive.type === 'blog' ? 'The blog' : 'Blog archive' }}</p>
-      <h1>{{ archive.title }}</h1>
-      <p class="intro">{{ archive.type === 'blog' ? 'Articles by Leslie Tourish.' : 'Articles by Leslie Tourish.' }}</p>
+      <template v-if="archive.path === '/blog/'">
+        <h1>{{ introduction.heading }}</h1>
+        <p class="intro">{{ introduction.subheading }}</p>
+        <p class="intro">{{ introduction.paragraph }}</p>
+      </template>
+      <template v-else>
+        <h1>{{ archive.title }}</h1>
+        <p class="intro">Articles by Leslie Tourish.</p>
+      </template>
     </header>
     <div class="shell archive-body">
       <PostList :posts="archive.posts" />

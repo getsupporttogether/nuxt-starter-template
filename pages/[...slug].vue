@@ -15,7 +15,7 @@ usePageMetadata(page || archive)
   <PageTemplate v-else :page="page">
     <section v-if="page.path === '/contact/'" class="inactive-contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact Leslie Tourish</h2>
-      <p>Online inquiries are unavailable. Please call <a href="tel:+15126951660">(512) 695-1660</a>.</p>
+      <p>Online inquiries are unavailable. Please call <a href="tel:+15126951660">(512) 695-1660</a> or email <a href="mailto:leslie@leslietourish.com">leslie@leslietourish.com</a>.</p>
     </section>
     <section v-if="page.path === '/mental-health-resources/'" id="faq" class="prose resource-child" aria-labelledby="combined-faq-title">
       <h2 id="combined-faq-title">Frequently Asked Questions</h2>

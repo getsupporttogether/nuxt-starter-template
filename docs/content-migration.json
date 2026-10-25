@@ -247,6 +247,36 @@
       "file": "content/posts/2026--02--02--finding-your-inner-summer-in-the-middle-of-winter.md",
       "words": 940,
       "expanded_blocks": []
+    },
+    {
+      "sourceId": 1892,
+      "path": "/1892-2/",
+      "file": "content/pages/1892-2.md",
+      "words": 399,
+      "expanded_blocks": []
+    },
+    {
+      "sourceId": 50,
+      "path": "/contact/",
+      "file": "content/pages/contact.md",
+      "words": 74,
+      "expanded_blocks": [
+        "147"
+      ]
+    },
+    {
+      "sourceId": 1187,
+      "path": "/privacy-policy/",
+      "file": "content/pages/privacy-policy.md",
+      "words": 392,
+      "expanded_blocks": []
+    },
+    {
+      "sourceId": 2929,
+      "path": "/texas-therapist-mental-health-records/",
+      "file": "content/pages/texas-therapist-mental-health-records.md",
+      "words": 364,
+      "expanded_blocks": []
     }
   ],
   "images": [
@@ -1040,6 +1070,48 @@
       "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2026/01/leslie-tourish-lpc-dripping-springs-texas-tip-5.png",
       "alt": "",
       "owner": "user"
+    },
+    {
+      "sourceId": 1892,
+      "role": "inline",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2025/02/privacy-policy-leslie-tourish-dripping-springs-texas-licensed-professional-counselor.jpg?w=1024",
+      "alt": "Licensed Professional Counselor Leslie Tourish has a privacy policy. Photo shows motherboard with padlock",
+      "owner": "user"
+    },
+    {
+      "sourceId": 50,
+      "role": "background",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/healing-glow-peaceful-nature-minimal-background.jpg",
+      "alt": null,
+      "owner": "user"
+    },
+    {
+      "sourceId": 50,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2023/12/leslie_tourish_dripping_springs_texas_psychotherapist_mandala_puzzle2.png",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 50,
+      "role": "inline",
+      "url": "https://leslietourish.com/wp-content/uploads/2024/01/find_your_balance_confidence_in_psychotherapy_with_leslie_tourish_dripping_springs_texas.png?w=1024",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 50,
+      "role": "inline",
+      "url": "https://dotcompatterns.files.wordpress.com/2023/10/pexels-karolina-grabowska-6825572-opt.jpg",
+      "alt": "",
+      "owner": "user"
+    },
+    {
+      "sourceId": 50,
+      "role": "inline",
+      "url": "https://leslietourishcom.wordpress.com/wp-content/uploads/2023/11/lt-logo-teal-transparent.png?w=1024",
+      "alt": "",
+      "owner": "user"
     }
   ],
   "dynamic_blocks": [
@@ -1131,6 +1203,49 @@
       "sourceId": 1937,
       "block": "post-title",
       "source_comment": "post-title {\"textAlign\":\"center\",\"level\":1,\"style\":{\"elements\":{\"link\":{\"color\":{\"text\":\"var:preset|color|custom-color-1\"}}}},\"textColor\":\"custom-color-1\"} /",
+      "handling": "inactive or existing page title"
+    },
+    {
+      "sourceId": 50,
+      "block": "jetpack/contact-form",
+      "source_comments": [
+        "wp:jetpack/contact-form {\"subject\":\"[Leslie Tourish Therapist] Contact\",\"jetpackCRM\":false,\"salesforceData\":{\"organizationId\":\"\",\"sendToSalesforce\":false},\"mailpoet\":{\"listId\":null,\"listName\":null,\"enabledForForm\":false},\"style\":{\"spacing\":{\"padding\":{\"top\":\"16px\",\"right\":\"16px\",\"bottom\":\"16px\",\"left\":\"16px\"}}}}",
+        "wp:jetpack/field-name {\"id\":\"\",\"required\":true,\"fieldVariant\":\"name\"}",
+        "wp:jetpack/label {\"label\":\"First Name\",\"requiredText\":\"(required)\"} /",
+        "wp:jetpack/input {\"style\":{\"border\":{\"style\":\"solid\"}}} /",
+        "/wp:jetpack/field-name",
+        "wp:jetpack/field-name {\"id\":\"\",\"required\":true,\"fieldVariant\":\"name\"}",
+        "wp:jetpack/label {\"label\":\"Last Name\",\"requiredText\":\"(required)\"} /",
+        "wp:jetpack/input {\"style\":{\"border\":{\"style\":\"solid\"}}} /",
+        "/wp:jetpack/field-name",
+        "wp:jetpack/field-name {\"id\":\"\",\"required\":true,\"fieldVariant\":\"name\"}",
+        "wp:jetpack/label {\"label\":\"Phone\",\"requiredText\":\"(required)\"} /",
+        "wp:jetpack/input {\"style\":{\"border\":{\"style\":\"solid\"}}} /",
+        "/wp:jetpack/field-name",
+        "wp:jetpack/field-checkbox {\"id\":\"\",\"className\":\"is-style-list\"}",
+        "wp:jetpack/option {\"placeholder\":\"Add option…\",\"label\":\"It is okay to leave a message at this number\",\"isStandalone\":true} /",
+        "/wp:jetpack/field-checkbox",
+        "wp:jetpack/field-email {\"id\":\"\",\"required\":true}",
+        "wp:jetpack/label {\"label\":\"Email\",\"requiredText\":\"(required)\"} /",
+        "wp:jetpack/input {\"style\":{\"border\":{\"style\":\"solid\"}}} /",
+        "/wp:jetpack/field-email",
+        "wp:jetpack/field-select {\"options\":[\"New Client\",\"Records Request\",\"Other\"]}",
+        "wp:jetpack/label {\"label\":\"Purpose for Connecting\"} /",
+        "wp:jetpack/input {\"placeholder\":\"Select one option\",\"type\":\"dropdown\",\"style\":{\"border\":{\"style\":\"solid\"}}} /",
+        "/wp:jetpack/field-select",
+        "wp:jetpack/field-textarea {\"id\":\"\"}",
+        "wp:jetpack/label {\"label\":\"Questions or Details on How I May Assist on Your Therapeutic Journey\",\"requiredText\":\"(required)\"} /",
+        "wp:jetpack/input {\"type\":\"textarea\",\"style\":{\"border\":{\"style\":\"solid\"}}} /",
+        "/wp:jetpack/field-textarea",
+        "wp:jetpack/button {\"element\":\"button\",\"text\":\"Send Your Confidential Request\",\"lock\":{\"remove\":true}} /",
+        "/wp:jetpack/contact-form"
+      ],
+      "handling": "inactive form"
+    },
+    {
+      "sourceId": 50,
+      "block": "jetpack/subscriptions",
+      "source_comment": "jetpack/subscriptions {\"borderRadius\":5} /",
       "handling": "inactive or existing page title"
     }
   ],
@@ -1292,6 +1407,41 @@
     },
     {
       "sourceId": 2738,
+      "from": "https://leslietourish.com/contact/",
+      "to": "/contact/"
+    },
+    {
+      "sourceId": 1892,
+      "from": "https://leslietourish.com/contact/",
+      "to": "/contact/"
+    },
+    {
+      "sourceId": 1892,
+      "from": "https://leslietourish.com/blog/",
+      "to": "/blog/"
+    },
+    {
+      "sourceId": 50,
+      "from": "https://leslietourish.com/privacy-policy/",
+      "to": "/privacy-policy/"
+    },
+    {
+      "sourceId": 50,
+      "from": "https://leslietourish.com/texas-therapist-mental-health-records/",
+      "to": "/texas-therapist-mental-health-records/"
+    },
+    {
+      "sourceId": 1187,
+      "from": "https://leslietourish.com/contact/",
+      "to": "/contact/"
+    },
+    {
+      "sourceId": 1187,
+      "from": "https://leslietourish.com/blog/",
+      "to": "/blog/"
+    },
+    {
+      "sourceId": 2929,
       "from": "https://leslietourish.com/contact/",
       "to": "/contact/"
     }
@@ -1514,6 +1664,30 @@
       "old_url": "https://leslietourish.com/2026/02/02/finding-your-inner-summer-in-the-middle-of-winter/",
       "target": "/2026/02/02/finding-your-inner-summer-in-the-middle-of-winter/",
       "action": "preserve"
+    },
+    {
+      "sourceId": 1892,
+      "old_url": "https://leslietourish.com/1892-2/",
+      "target": "/1892-2/",
+      "action": "preserve"
+    },
+    {
+      "sourceId": 50,
+      "old_url": "https://leslietourish.com/contact/",
+      "target": "/contact/",
+      "action": "preserve"
+    },
+    {
+      "sourceId": 1187,
+      "old_url": "https://leslietourish.com/privacy-policy/",
+      "target": "/privacy-policy/",
+      "action": "preserve"
+    },
+    {
+      "sourceId": 2929,
+      "old_url": "https://leslietourish.com/texas-therapist-mental-health-records/",
+      "target": "/texas-therapist-mental-health-records/",
+      "action": "preserve"
     }
   ],
   "editorial": [
@@ -1541,6 +1715,21 @@
       "sourceId": 2871,
       "source_title": "Don't Let the Pessimists Dim Your Light: Protecting Your Optimism in the New Year",
       "retained_title": "Don’t Let the Pessimists Dim Your Light: Protecting Your Optimism in the New Year"
+    },
+    {
+      "sourceId": 1892,
+      "source_title": "",
+      "retained_title": "Privacy Policy"
+    },
+    {
+      "sourceIds": [
+        1187,
+        1892
+      ],
+      "field": "office address",
+      "source_text": "3975 E US Highway 290, Dripping Springs, TX 78620",
+      "approved_text": "4207 East U.S. Highway 290, Suite 111, Dripping Springs, TX 78620",
+      "authorization": "User confirmed Contact address and requested both privacy pages updated, 2026-10-25. All other policy text unchanged."
     }
   ],
   "excluded_types": [

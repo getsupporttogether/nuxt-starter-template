@@ -1,7 +1,8 @@
 """Import the approved public practice pages and all blog posts; never ingest feedback.
 
 Usage: python3 scripts/import-wordpress.py /path/to/counseling-export.xml
-Home, four core pages and all published blog posts. Other pages remain separate.
+All approved practice pages and published blog posts; Blog uses its generated index.
+Pass optional source IDs after the export path for a bounded incremental import.
 The export itself is never copied into the repo.
 """
 from pathlib import Path
@@ -13,7 +14,7 @@ import hashlib, json, re, sys, xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 NS = {'w': 'http://wordpress.org/export/1.2/', 'c': 'http://purl.org/rss/1.0/modules/content/'}
 HOSTS = {'leslietourish.com', 'www.leslietourish.com', 'leslietourishcom.wordpress.com'}
-SELECTED = {'84', '1', '47', '1253', '1198', '649'}
+SELECTED = {'84', '1', '47', '1253', '1198', '649', '50', '1187', '1892', '2929'}
 
 class Node:
     def __init__(self, tag='', attrs=(), children=None):
@@ -47,7 +48,7 @@ def literal(s):
 
 def item_type(item): return item.findtext('w:post_type', namespaces=NS)
 
-def main(source):
+def main(source, only=None):
     channel = ET.parse(source).getroot().find('channel')
     assert channel.findtext('link') == 'https://leslietourish.com', 'Wrong site export'
     items = channel.findall('item')
@@ -73,8 +74,16 @@ def main(source):
               'unresolved_links': [], 'source_url_map': [], 'editorial': [],
               'excluded_types': sorted({i.findtext('w:post_type', namespaces=NS) for i in items} - {'page','post','wp_block'})}
     expectations = {}
+    if only:
+        previous = json.loads((ROOT/'docs/content-migration.json').read_text())
+        assert previous['source_sha256'] == report['source_sha256'], 'Export changed'
+        for key, value in previous.items():
+            if isinstance(value, list) and key != 'excluded_types':
+                report[key] = [entry for entry in value if str(entry.get('sourceId')) not in only]
+        expectations = json.loads((ROOT/'tests/migration-text.json').read_text())
     existing_images = {i['source_url']: i['target_local_asset'] for i in json.loads((ROOT/'docs/homepage-image-provenance.json').read_text())['images'] if i.get('status') == 'downloaded'}
     for path, ident, route, front in records:
+        if only and ident not in only: continue
         if ident not in SELECTED and item_type(public[ident]) != 'post': continue
         item = public[ident]
         report['source_url_map'].append({'sourceId': int(ident), 'old_url': item.findtext('link'), 'target': route,
@@ -133,6 +142,9 @@ def main(source):
                 src, alt = a.get('src',''), a.get('alt','')
                 report['images'].append({'sourceId': int(ident), 'role': 'inline', 'url': src, 'alt': alt, 'owner': 'user'})
                 if ident == '84' and 'dotcompatterns.files.wordpress.com' in src: return ''
+                if ident == '1892':
+                    provenance = json.loads((ROOT/'docs/privacy-image-provenance.json').read_text())
+                    if src == provenance['wordpress_reference']: src = '/' + provenance['local'].removeprefix('public/')
                 src = existing_images.get(src, src)
                 return '\n\n!['+literal(alt)+'](<'+src+'>)\n\n'
             if tag == 'br': return '  \n'
@@ -165,7 +177,7 @@ def main(source):
             if tag in {'p','div','figure','figcaption','section'}: return '\n\n'+value.strip()+'\n\n'
             return value
         md=re.sub(r'\n[ \t]*\n(?:[ \t]*\n)+','\n\n',render(dom.root)).strip()+'\n'
-        # Source URLs remain in Markdown/provenance; the renderer supplies photo placeholders.
+        # Source URLs remain in Markdown/provenance; the renderer omits unavailable photos.
         lines=md.split('\n')
         md='\n'.join((line.rstrip() + '\\') if line.strip() and line.endswith('  ') and index+1<len(lines) and lines[index+1].strip() else line.rstrip() for index,line in enumerate(lines))
         path.write_text('---'+front.replace('placeholder: true','placeholder: false')+'---\n\n'+md)
@@ -177,4 +189,4 @@ def main(source):
                       'image_references':len(report['images']), 'unique_image_urls':len({x['url'] for x in report['images']}),
                       'normalized_internal_links':len(report['link_changes']), 'unresolved_links':report['unresolved_links']},indent=2))
 
-if __name__ == '__main__': main(sys.argv[1])
+if __name__ == '__main__': main(sys.argv[1], set(sys.argv[2:]) or None)
